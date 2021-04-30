@@ -1,0 +1,31 @@
+{
+  "name": "random-colors-palette",
+  "version": "0.0.2",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaetanozappi/random-colors-palette.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gaetanozappi/random-colors-palette/issues"
+  },
+  "homepage": "https://github.com/gaetanozappi/random-colors-palette#readme",
+  "main": "randomColors.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "color",
+    "random",
+    "background",
+    "palette",
+    "material",
+    "uniqcolor",
+    "unique",
+    "generate",
+    "generator"
+  ],
+  "author": "Gaetano Zappi",
+  "license": "Apache License 2.0",
+  "peerDependencies": {}
+}
