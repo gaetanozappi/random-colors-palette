@@ -182,5 +182,16 @@ randomColors({
 | `format`       | `string`   | `hex`   |
 | `typeObj`       | `bool`   | `true`   |
 
+
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_01.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_02.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_03.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_04.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_05.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_06.png?raw=true" />
+<img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_07.png?raw=true" />
+
+
+
 ## 📜 License
 This library is provided under the Apache License.
