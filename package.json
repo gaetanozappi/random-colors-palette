@@ -1,6 +1,6 @@
 {
   "name": "random-colors-palette",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
     "url": "https://github.com/gaetanozappi/random-colors-palette/issues"
   },
   "homepage": "https://github.com/gaetanozappi/random-colors-palette#readme",
-  "main": "randomColors.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,10 +28,5 @@
   "author": "Gaetano Zappi",
   "license": "Apache License 2.0",
   "peerDependencies": {},
-  "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.13.12",
-    "babel-loader": "^8.2.2",
-    "babel-preset-es2020": "^1.0.2"
-  }
+  "devDependencies": {}
 }

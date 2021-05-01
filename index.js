@@ -136,7 +136,7 @@ const randomColors = ({
 		else acc.push(setFormat(shadeR[1], format));
 		if (!repeat) {
 			delete cc[hueNumber].shades[shadeR[0]];
-			if (Object.entries(cc[hueNumber]?.shades).length === 0) cc.splice(hueNumber, 1);
+			if (Object.entries(cc[hueNumber].shades).length === 0) cc.splice(hueNumber, 1);
 		}
 		return acc;
 	}, []);

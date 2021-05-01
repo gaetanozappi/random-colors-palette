@@ -1,2 +1,8 @@
+# OSX
+#
+.DS_Store
+
+node_modules/
+
 .github/
 screen/
