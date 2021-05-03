@@ -14,10 +14,64 @@
 -   [Usage](#-usage)
 -   [License](#-license)
 
+It allows you to generate random colors from a set of palettes defined by material io.
+
 ## 💻 Usage
 
 ```javascript
-import { randomColors, colorsList, huesList, shadesList, formatList } from 'random-colors-palette';
+import { uniqColor, randomColors, colorsList, huesList, shadesList, formatList } from 'random-colors-palette';
+
+uniqColor()
+
+/*
+text = new Date()
+*/
+
+uniqColor({ format: "hex" });
+
+/*
+text = new Date()
+*/
+
+uniqColor({ text: "", format: "hsl" });
+
+/*
+text = new Date()
+*/
+
+uniqColor({ text: "Hello world!", format: "rgb" });
+
+/*
+[
+    {
+        "hue": "cyan",
+        "shade": "100",
+        "value": "rgb(178, 235, 242)"
+    }
+]
+*/
+
+uniqColor({ text: ["Hello", "wold", "!"], format: "hex" });
+
+/*
+[
+    {
+        "hue": "orange",
+        "shade": "600",
+        "value": "#fb8c00"
+    },
+    {
+        "hue": "lightBlue",
+        "shade": "A400",
+        "value": "#00b0ff"
+    },
+    {
+        "hue": "deepOrange",
+        "shade": "700",
+        "value": "#e64a19"
+    }
+]
+ */
 
 randomColors({
  number: 3,
@@ -170,18 +224,28 @@ randomColors({
 
 ## 💡 Props
 
+uniqColor
+
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| `number`       | `number`   | `1`   |Numbers of colors to generate.
-| `hues`      | `array`   | `huesList`  | 
-| `shades`       | `array`   | `shadesList`   |
-| `excludeHues`       | `array`   | `[]`   |
-| `excludeShades`     | `array`   | `[]` |
-| `repeat`       | `bool`   | `false`   |
-| `numberColorGroup`       | `number`   | `1`   |
-| `format`       | `string`   | `hex`   |
-| `typeObj`       | `bool`   | `true`   |
+| `text`      | `string/array`   | `new Date()`  | The text you want to pass to generate the color.
+| `format`       | `string`   | `hex`   | `hex, rgb, hsl`
+| `typeObj`       | `bool`   | `true`   | If you want the returned value is only an object or the color value.
 
+
+randomColors
+
+| Prop              | Type       | Default | Note                                                                                                       |
+| ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `number`       | `number`   | `1`   | Numbers of colors to generate.
+| `hues`      | `array`   | `huesList`  | The hues you want to use to generate the colors.
+| `shades`       | `array`   | `shadesList`   | The shades that you want to use to generate the colors.
+| `excludeHues`       | `array`   | `[]`   | The hues you don't want to use to generate colors.
+| `excludeShades`     | `array`   | `[]` | The shades that you don't want to use to generate the colors.
+| `repeat`       | `bool`   | `false`   | If you want the colors repeated.
+| `numberColorGroup`       | `number`   | `1`   | If you want the colors to be grouped by n.
+| `format`       | `string`   | `hex`   | `hex, rgb, hsl`
+| `typeObj`       | `bool`   | `true`   | If you want the returned value is only an object or the color value.
 
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_01.png?raw=true" />
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_02.png?raw=true" />
@@ -190,8 +254,6 @@ randomColors({
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_05.png?raw=true" />
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_06.png?raw=true" />
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_07.png?raw=true" />
-
-
 
 ## 📜 License
 This library is provided under the Apache License.

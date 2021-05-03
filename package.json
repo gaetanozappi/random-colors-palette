@@ -1,7 +1,7 @@
 {
   "name": "random-colors-palette",
-  "version": "0.0.9",
-  "description": "",
+  "version": "0.0.10",
+  "description": "It allows you to generate random colors from a set of palettes defined by material io.",
   "repository": {
     "type": "git",
     "url": "https://github.com/gaetanozappi/random-colors-palette.git"
