@@ -27,7 +27,7 @@ import {
     huesList,
     shadesList,
     formatList,
-} from "../random-colors-palette";
+} from "random-colors-palette";
 
 export default function RandomColors({ darkState }) {
     const useStyles = makeStyles((theme) => ({

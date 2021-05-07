@@ -18,7 +18,7 @@ import {
     uniqColor,
     getContrastYIQ,
     formatList
-} from "../random-colors-palette";
+} from "random-colors-palette";
 import { HighlightOff } from "@material-ui/icons";
 
 export default function UniqColor({ darkState }) {
@@ -36,12 +36,11 @@ export default function UniqColor({ darkState }) {
         text: ["random", "colors", "palette"],
         format: "hex",
         textContrast: true,
-        typeObj: false
+        typeObj: true
     });
     const { uniqRandom, text, textContrast, format, typeObj } = state;
 
     useEffect(() => {
-        console.log("tt", typeObj);
         const uniqRandom = uniqColor({
             text,
             format,
@@ -85,8 +84,6 @@ export default function UniqColor({ darkState }) {
             </div>
         </div>
     );
-
-    console.log(state);
 
     return (
         <>
