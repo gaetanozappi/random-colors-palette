@@ -8,25 +8,38 @@ const groupBy = (xs, number, arr = []) =>
         return rv;
     }, []);
 
-const hexToRgb = (hex) => {
-    const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    const [, r, g, b] = result;
-    const convert = (a) => parseInt(a, 16);
-    return result ? `rgb(${convert(r)}, ${convert(g)}, ${convert(b)})` : null;
+const hexToRgb = (hex, type = "string") => {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if (!result) return null;
+    result.shift();
+    const [r, g, b] = result.map((el) => parseInt(el, 16));
+    switch (type) {
+        case "obj":
+            return { r, g, b };
+        case "array":
+            return [r, g, b];
+        default:
+            return `rgb(${r}, ${g}, ${b})`;
+    }
 };
 
-const hexToHSL = (H) => {
+const getContrastYIQ = (hex) => {
+    const { r, g, b } = hexToRgb(hex, "obj");
+    return (r * 299 + g * 587 + b * 114) / 1000 >= 128 ? "#000000" : "#FFFFFF";
+};
+
+const hexToHSL = (hex, type = "string") => {
     let r = 0;
     let g = 0;
     let b = 0;
-    if (H.length === 4) {
-        r = `0x${H[1]}${H[1]}`;
-        g = `0x${H[2]}${H[2]}`;
-        b = `0x${H[3]}${H[3]}`;
-    } else if (H.length === 7) {
-        r = `0x${H[1]}${H[2]}`;
-        g = `0x${H[3]}${H[4]}`;
-        b = `0x${H[5]}${H[6]}`;
+    if (hex.length === 4) {
+        r = `0x${hex[1]}${hex[1]}`;
+        g = `0x${hex[2]}${hex[2]}`;
+        b = `0x${hex[3]}${hex[3]}`;
+    } else if (hex.length === 7) {
+        r = `0x${hex[1]}${hex[2]}`;
+        g = `0x${hex[3]}${hex[4]}`;
+        b = `0x${hex[5]}${hex[6]}`;
     }
     r /= 255;
     g /= 255;
@@ -48,25 +61,39 @@ const hexToHSL = (H) => {
     s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
     s = +(s * 100).toFixed(1);
     l = +(l * 100).toFixed(1);
-    return `hsl(${h}, ${s}%, ${l}%)`;
+    switch (type) {
+        case "obj":
+            return { h, s, l };
+        case "array":
+            return [h, s, l];
+        default:
+            return `hsl(${h}, ${s}%, ${l}%)`;
+    }
 };
 
-const setFormat = (color, type) => {
+const setFormat = (hex, type) => {
     switch (type) {
         case "rgb":
-            return hexToRgb(color);
+            return hexToRgb(hex);
+        case "rgb-obj":
+            return hexToRgb(hex, "obj");
+        case "rgb-array":
+            return hexToRgb(hex, "array");
         case "hsl":
-            return hexToHSL(color);
+            return hexToHSL(hex);
+        case "hsl-obj":
+            return hexToHSL(hex, "obj");
+        case "hsl-array":
+            return hexToHSL(hex, "array");
         default:
-            return color;
+            return hex;
     }
 };
 
 const hashCode = (str) =>
     str.split("").reduce((acc, el) => {
         acc = (acc << 5) - acc + el.charCodeAt(0);
-        acc &= acc;
-        return acc;
+        return acc & acc;
     }, 0);
 
 const boundHashCode = (num, range) =>
@@ -74,4 +101,12 @@ const boundHashCode = (num, range) =>
         ? range
         : (num % Math.abs(range[1] - range[0])) + range[0];
 
-export { groupBy, hexToRgb, hexToHSL, setFormat, hashCode, boundHashCode };
+export {
+    groupBy,
+    hexToRgb,
+    hexToHSL,
+    setFormat,
+    hashCode,
+    boundHashCode,
+    getContrastYIQ
+};

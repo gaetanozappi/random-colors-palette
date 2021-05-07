@@ -19,7 +19,7 @@ It allows you to generate random colors from a set of palettes defined by materi
 ## 💻 Usage
 
 ```javascript
-import { uniqColor, randomColors, colorsList, huesList, shadesList, formatList } from 'random-colors-palette';
+import { uniqColor, randomColor, colorsList, huesList, shadesList, formatList } from 'random-colors-palette';
 
 uniqColor()
 
@@ -73,7 +73,7 @@ uniqColor({ text: ["Hello", "wold", "!"], format: "hex" });
 ]
  */
 
-randomColors({
+randomColor({
  number: 3,
  hues: ['red', 'blue', 'lightBlue', 'cyan'],
  shades: ['100', '300', '400', '500', '700'],
@@ -109,7 +109,7 @@ randomColors({
 }
 */
 
-randomColors({
+randomColor({
  number: 3,
  hues: ['red', 'blue', 'lightBlue', 'cyan'],
  shades: ['100', '300', '400', '500', '700'],
@@ -149,7 +149,7 @@ randomColors({
 }
 */
 
-randomColors({
+randomColor({
  number: 3,
  hues: ['red', 'blue', 'lightBlue', 'cyan'],
  shades: ['100', '300', '400', '500', '700'],
@@ -230,10 +230,11 @@ uniqColor
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
 | `text`      | `string/array`   | `new Date()`  | The text you want to pass to generate the color.
 | `format`       | `string`   | `hex`   | `hex, rgb, hsl`
+| `textContrast`       | `bool`   | `true`   | If true, it returns the contrast color to use for the texts.
 | `typeObj`       | `bool`   | `true`   | If you want the returned value is only an object or the color value.
 
 
-randomColors
+randomColor
 
 | Prop              | Type       | Default | Note                                                                                                       |
 | ----------------- | ---------- | ------- | ---------------------------------------------------------------------------------------------------------- |
@@ -245,6 +246,7 @@ randomColors
 | `repeat`       | `bool`   | `false`   | If you want the colors repeated.
 | `numberColorGroup`       | `number`   | `1`   | If you want the colors to be grouped by n.
 | `format`       | `string`   | `hex`   | `hex, rgb, hsl`
+| `textContrast`       | `bool`   | `true`   | If true, it returns the contrast color to use for the texts.
 | `typeObj`       | `bool`   | `true`   | If you want the returned value is only an object or the color value.
 
 <img src="https://github.com/gaetanozappi/random-colors-palette/blob/main/screen/Group_color_01.png?raw=true" />

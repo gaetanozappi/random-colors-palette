@@ -3,4 +3,6 @@
 .DS_Store
 .idea
 
+# dependencies
 node_modules/
+test/

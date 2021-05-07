@@ -1,6 +1,6 @@
 {
   "name": "random-colors-palette",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "It allows you to generate random colors from a set of palettes defined by material io.",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
   "homepage": "https://github.com/gaetanozappi/random-colors-palette#readme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "color",
@@ -28,5 +28,9 @@
   "author": "Gaetano Zappi",
   "license": "Apache License 2.0",
   "peerDependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/mocha": "^8.2.2",
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
 }

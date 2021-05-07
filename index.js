@@ -1,9 +1,23 @@
-import { colorsList, huesList, shadesList, formatList } from "./defaultValue";
-import { groupBy, hexToRgb, hexToHSL, setFormat, hashCode, boundHashCode } from "./function";
+import {
+	groupBy,
+	hexToRgb,
+	hexToHSL,
+	setFormat,
+	hashCode,
+	boundHashCode,
+	getContrastYIQ
+} from "./function.js";
+import {
+	colorsList,
+	huesList,
+	shadesList,
+	formatList
+} from "./defaultValue.js";
 
 const uniqColor = ({
 					   text = new Date(),
 					   format = "hex",
+					   textContrast = false,
 					   typeObj = true
 				   } = {}) => {
 	if (text === "") text = new Date();
@@ -14,29 +28,30 @@ const uniqColor = ({
 		const shadeR = boundHashCode(hash, [0, 13]);
 		const [hue, shaderS] = Object.entries(colorsList)[hueR];
 		let [shade, value] = Object.entries(shaderS)[shadeR];
-		value = setFormat(value, format);
 		if (typeObj)
 			return {
 				hue,
 				shade,
-				value
+				value: setFormat(value, format),
+				...(textContrast && { textContrast: getContrastYIQ(value) })
 			};
-		return value;
+		return setFormat(value, format);
 	});
 };
 
-const randomColors = ({
-						  number = 1,
-						  hues = huesList,
-						  shades = shadesList,
-						  excludeHues = [],
-						  excludeShades = [],
-						  repeat = false,
-						  numberColorGroup = 1,
-						  filter = false,
-						  format = "hex",
-						  typeObj = true
-					  } = {}) => {
+const randomColor = ({
+						 number = 1,
+						 hues = huesList,
+						 shades = shadesList,
+						 excludeHues = [],
+						 excludeShades = [],
+						 repeat = false,
+						 numberColorGroup = 1,
+						 filter = false,
+						 format = "hex",
+						 textContrast = false,
+						 typeObj = true
+					 } = {}) => {
 	if (isNaN(number)) number = 1;
 	if (number < 1) {
 		return {
@@ -104,7 +119,8 @@ const randomColors = ({
 			acc.push({
 				hue: hueR.hue,
 				shade: shadeR[0],
-				value: setFormat(shadeR[1], format)
+				value: setFormat(shadeR[1], format),
+				...(textContrast && { textContrast: getContrastYIQ(shadeR[1]) })
 			});
 		else acc.push(setFormat(shadeR[1], format));
 		if (!repeat) {
@@ -127,11 +143,12 @@ const randomColors = ({
 
 export {
 	uniqColor,
-	randomColors,
+	randomColor,
+	hexToRgb,
+	hexToHSL,
+	getContrastYIQ,
 	colorsList,
 	huesList,
 	shadesList,
-	formatList,
-	hexToRgb,
-	hexToHSL
+	formatList
 };
