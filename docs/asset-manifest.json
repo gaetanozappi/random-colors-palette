@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/random-colors-palette/static/css/main.b626b15c.chunk.css",
+    "main.js": "/random-colors-palette/static/js/main.1dcf5198.chunk.js",
+    "main.js.map": "/random-colors-palette/static/js/main.1dcf5198.chunk.js.map",
+    "runtime-main.js": "/random-colors-palette/static/js/runtime-main.b38d3599.js",
+    "runtime-main.js.map": "/random-colors-palette/static/js/runtime-main.b38d3599.js.map",
+    "static/js/2.4245cbdd.chunk.js": "/random-colors-palette/static/js/2.4245cbdd.chunk.js",
+    "static/js/2.4245cbdd.chunk.js.map": "/random-colors-palette/static/js/2.4245cbdd.chunk.js.map",
+    "index.html": "/random-colors-palette/index.html",
+    "static/css/main.b626b15c.chunk.css.map": "/random-colors-palette/static/css/main.b626b15c.chunk.css.map",
+    "static/js/2.4245cbdd.chunk.js.LICENSE.txt": "/random-colors-palette/static/js/2.4245cbdd.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b38d3599.js",
+    "static/js/2.4245cbdd.chunk.js",
+    "static/css/main.b626b15c.chunk.css",
+    "static/js/main.1dcf5198.chunk.js"
+  ]
+}

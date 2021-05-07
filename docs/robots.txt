@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /random-colors-palette/
+Sitemap: https://gaetanozappi.github.io/random-colors-palette/sitemap.xml

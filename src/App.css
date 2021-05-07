@@ -1,0 +1,92 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', serif;
+  color: #868e96 !important;
+}
+
+::selection {
+  background: #1a97ff;
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  //background-color: #282c34;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+a {
+  color: #2196F3 !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover, a:focus, a:active {
+  color: #2196F3 !important;
+}
+
+button:focus {
+  outline:0;
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+.hp {
+  font-family: 'Saira Extra Condensed',serif;
+}
+
+.devicons {
+  font-size: 3rem;
+  vertical-align: text-bottom;
+}
+
+.text-primary {
+    color: #2196f3 !important;
+}
+
+.sub-heading {
+    font-weight: 600;
+    font-family: 'Saira Extra Condensed',serif;
+    font-size: 1.35rem;
+}
+
+.list-icons {
+    font-size: 2rem;
+}
+
+.list-inline-item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.list-inline-item {
+    display: inline-block;
+}
+
+.list-inline-item > i:hover {
+  color: #2396f3 !important;
+  cursor: pointer;
+}
+
+.underline__text:hover {
+    transition: .5s cubic-bezier(.645,.045,.355,1);
+    background-size: 100% 100%;
+}
+
+.underline__text {
+    line-height: 1;
+    display: inline;
+    background-image: linear-gradient(transparent 50%,#ffc107 50%,#ffc107 85%,transparent 85%,transparent 100%);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+}
